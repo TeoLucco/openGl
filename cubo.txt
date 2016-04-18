@@ -1,0 +1,172 @@
+//
+// File:        ilmiocubo.c
+// Autore:      Matt Daisley
+// Creato:     25/4/2012
+// Progetto:     Codice sorgente per creare un cubo in OpenGL
+// Descrizione: crea una finestra OpenGL e disegna un cubo 3D
+//              Che l'utente può ruotare usando le frecce direzionali
+// 
+// Controlli:    Freccia sinistra - Ruota a sinistra
+//              Freccia destra - Ruota a destra
+//              Freccia su    - Ruota verso l'alto
+//              Freccia giù  - Ruota verso il basso     
+ 
+// ----------------------------------------------------------
+// Includes
+// ----------------------------------------------------------
+#include <stdio.h>
+#include <stdarg.h>
+#include <math.h>
+#define GL_GLEXT_PROTOTYPES
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
+#include <GL/glut.h>
+#endif
+ 
+// ----------------------------------------------------------
+// Prototipi delle funzioni
+// ----------------------------------------------------------
+void display();
+void specialKeys();
+ 
+// ----------------------------------------------------------
+// Variabili Globali
+// ----------------------------------------------------------
+double rotate_y=0; 
+double rotate_x=0;
+ 
+// ----------------------------------------------------------
+// Funzione di richiamo display()
+// ----------------------------------------------------------
+void display(){
+ 
+  // Cancellare la schermata e azzerare il buffer Z
+  glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+ 
+  // Resettare le trasformazioni
+  glLoadIdentity();
+ 
+  // Altre trasformazioni
+  // glTranslatef( 0.1, 0.0, 0.0 );      // Non incluso
+  // glRotatef( 180, 0.0, 1.0, 0.0 );    // Non incluso
+ 
+  // Ruota quando l'utente modifica rotate_x e rotate_y
+  glRotatef( rotate_x, 1.0, 0.0, 0.0 );
+  glRotatef( rotate_y, 0.0, 1.0, 0.0 );
+ 
+  // Altre trasformazioni
+  // glScalef( 2.0, 2.0, 0.0 );          // Non incluso
+ 
+  // Lato multicolore - FRONTALE
+  glBegin(GL_POLYGON);
+ 
+  glColor3f( 1.0, 0.0, 0.0 );     glVertex3f(  0.5, -0.5, -0.5 );      // P1 rosso
+  glColor3f( 0.0, 1.0, 0.0 );     glVertex3f(  0.5,  0.5, -0.5 );      // P2 verde
+  glColor3f( 0.0, 0.0, 1.0 );     glVertex3f( -0.5,  0.5, -0.5 );      // P3 blu
+  glColor3f( 1.0, 0.0, 1.0 );     glVertex3f( -0.5, -0.5, -0.5 );      // P4 viola
+ 
+  glEnd();
+ 
+  // Lato Bianco - POSTERIORE
+  glBegin(GL_POLYGON);
+  glColor3f(  1.0,  0.0,  1.0 );
+  glVertex3f(  0.5, -0.5, 0.5 );
+  glVertex3f(  0.5,  0.5, 0.5 );
+  glVertex3f( -0.5,  0.5, 0.5 );
+  glVertex3f( -0.5, -0.5, 0.5 );
+  glEnd();
+ 
+  // Lato Viola - DESTRO
+  glBegin(GL_POLYGON);
+  glColor3f(  1.0,  0.0,  1.0 );
+  glVertex3f( 0.5, -0.5, -0.5 );
+  glVertex3f( 0.5,  0.5, -0.5 );
+  glVertex3f( 0.5,  0.5,  0.5 );
+  glVertex3f( 0.5, -0.5,  0.5 );
+  glEnd();
+ 
+  // Lato Verde - SINISTRO
+  glBegin(GL_POLYGON);
+  glColor3f(   0.0,  1.0,  0.0 );
+  glVertex3f( -0.5, -0.5, 0.5 );
+  glVertex3f( -0.5,  0.5,  0.5 );
+  glVertex3f( -0.5,  0.5, -0.5 );
+  glVertex3f( -0.5, -0.5, -0.5 );
+  glEnd();
+ 
+  // Lato Blu - SUPERIORE
+  glBegin(GL_POLYGON);
+  glColor3f(   0.0,  0.0,  1.0 );
+  glVertex3f(  0.5,  0.5,  0.5 );
+  glVertex3f(  0.5,  0.5, -0.5 );
+  glVertex3f( -0.5,  0.5, -0.5 );
+  glVertex3f( -0.5,  0.5,  0.5 );
+  glEnd();
+ 
+  // Lato Rosso - INFERIORE
+  glBegin(GL_POLYGON);
+  glColor3f(   1.0,  0.0,  0.0 );
+  glVertex3f(  0.5, -0.5, -0.5 );
+  glVertex3f(  0.5, -0.5, 0.5 );
+  glVertex3f( -0.5, -0.5,  0.5 );
+  glVertex3f( -0.5, -0.5, -0.5 );
+  glEnd();
+ 
+  glFlush();
+  glutSwapBuffers();
+ 
+}
+ 
+// ----------------------------------------------------------
+// Funzione di richiamo specialKeys()
+// ----------------------------------------------------------
+void specialKeys( int key, int x, int y ) {
+ 
+  // Freccia destra - aumenta la rotazione di 5 gradi
+  if (key == GLUT_KEY_RIGHT)
+    rotate_y += 5;
+ 
+  // Freccia sinistra - riduci la rotazione di 5 gradi
+  else if (key == GLUT_KEY_LEFT)
+    rotate_y -= 5;
+ 
+  else if (key == GLUT_KEY_UP)
+    rotate_x += 5;
+ 
+  else if (key == GLUT_KEY_DOWN)
+    rotate_x -= 5;
+ 
+  // Richiedi l'aggiornamento dell'immagine
+  glutPostRedisplay();
+ 
+}
+ 
+// ----------------------------------------------------------
+// Funzione main()
+// ----------------------------------------------------------
+int main(int argc, char* argv[]){
+ 
+  //  Inizializzare il GLUT e processare i parametri degli utenti
+  glutInit(&argc,argv);
+ 
+  //  Richiedi una finestra a colori veri con doppio buffering e buffer Z
+  glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+ 
+  // Creare la finestra
+  glutCreateWindow("Cubo Meraviglioso");
+ 
+  // Abilita il test di profondità del buffer Z
+  glEnable(GL_DEPTH_TEST);
+ 
+  // Funzioni di richiamo
+  glutDisplayFunc(display);
+  glutSpecialFunc(specialKeys);
+ 
+  // Passare il controllo alla GLUT per gli eventi
+  glutMainLoop();
+ 
+  // Ritornare al sistema operativo
+  return 0;
+ 
+}

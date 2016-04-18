@@ -1,0 +1,57 @@
+﻿Build started 25/01/2016 03:12:00.
+     1>Project "C:\Users\Teo\Documents\Visual Studio 2012\Projects\openGl\openGl.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\CImg-1.6.9_pre122115\plugins" /I"C:\CImg-1.6.9_pre122115" /I"C:\gli\external\glm-0.9.7.1" /IC:\gli /I"C:\glut\glew-1.11.0\include" /IC:\glut\freeglut\include /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Practica1.cpp
+         Practica1.cpp
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\vertex.h(12): warning C4068: unknown pragma
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\vertex.h(26): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\vertex.h(27): warning C4056: overflow in floating-point constant arithmetic
+     1>c:\gli\gli\core\image.inl(90): warning C4244: 'return' : conversion from 'glm::uint64' to 'size_t', possible loss of data
+     1>c:\gli\gli\core\image.inl(105): warning C4244: 'return' : conversion from 'glm::uint64' to 'size_t', possible loss of data
+     1>c:\gli\gli\core\load_dds.inl(281): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+     1>c:\gli\gli\core\load_ktx.inl(140): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+     1>c:\gli\gli\core\load.inl(48): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+     1>c:\gli\gli\core\save_dds.inl(132): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+     1>c:\gli\gli\core\save_ktx.inl(131): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\vertex.h(12): warning C4081: expected 'identifier'; found 'struct'
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\practica1.cpp(92): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\practica1.cpp(93): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\practica1.cpp(94): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\practica1.cpp(170): warning C4244: 'argument' : conversion from 'const int' to 'GLfloat', possible loss of data
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\practica1.cpp(174): warning C4244: 'argument' : conversion from 'const int' to 'GLfloat', possible loss of data
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\practica1.cpp(178): warning C4244: 'argument' : conversion from 'const int' to 'GLfloat', possible loss of data
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\practica1.cpp(268): warning C4244: '=' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\practica1.cpp(269): warning C4244: '=' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\practica1.cpp(283): warning C4305: '/=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\practica1.cpp(284): warning C4305: '*=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\practica1.cpp(341): warning C4305: '*=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\teo\documents\visual studio 2012\projects\opengl\practica1.cpp(342): warning C4305: '/=' : truncation from 'double' to 'GLfloat'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Teo\Documents\Visual Studio 2012\Projects\openGl\Debug\openGl.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\glut\glew-1.11.0\lib" /LIBPATH:C:\glut\freeglut\lib freeglut.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Teo\Documents\Visual Studio 2012\Projects\openGl\Debug\openGl.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Teo\Documents\Visual Studio 2012\Projects\openGl\Debug\openGl.lib" /MACHINE:X86 Debug\openGl.res
+         Debug\base.obj
+         Debug\baseAlta.obj
+         Debug\brazos.obj
+         Debug\camara0.obj
+         Debug\Cubo.obj
+         Debug\file_ply_stl.obj
+         Debug\imageloader.obj
+         Debug\luzMovil.obj
+         Debug\malla.obj
+         Debug\O3DC.obj
+         Debug\O3DS.obj
+         Debug\Practica1.obj
+         Debug\respaldos.obj
+         Debug\rueda.obj
+         Debug\Silla.obj
+         Debug\Tetraedo.obj
+         openGl.vcxproj -> C:\Users\Teo\Documents\Visual Studio 2012\Projects\openGl\Debug\openGl.exe
+     1>Done Building Project "C:\Users\Teo\Documents\Visual Studio 2012\Projects\openGl\openGl.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:15.64

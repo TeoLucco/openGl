@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="base.cpp" />
+    <ClCompile Include="baseAlta.cpp" />
+    <ClCompile Include="brazos.cpp" />
+    <ClCompile Include="camara0.cpp" />
+    <ClCompile Include="Cubo.cpp" />
+    <ClCompile Include="file_ply_stl.cpp" />
+    <ClCompile Include="imageloader.cpp" />
+    <ClCompile Include="luzMovil.cpp" />
+    <ClCompile Include="malla.cpp" />
+    <ClCompile Include="O3DC.cpp" />
+    <ClCompile Include="O3DS.cpp" />
+    <ClCompile Include="Practica1.cpp" />
+    <ClCompile Include="respaldos.cpp" />
+    <ClCompile Include="rueda.cpp" />
+    <ClCompile Include="Silla.cpp" />
+    <ClCompile Include="Tetraedo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="base.h" />
+    <ClInclude Include="baseAlta.h" />
+    <ClInclude Include="brazos.h" />
+    <ClInclude Include="camara0.h" />
+    <ClInclude Include="Cubo.h" />
+    <ClInclude Include="file_ply_stl.h" />
+    <ClInclude Include="imageloader.h" />
+    <ClInclude Include="luzMovil.h" />
+    <ClInclude Include="malla.h" />
+    <ClInclude Include="O3DC.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="respaldos.h" />
+    <ClInclude Include="rueda.h" />
+    <ClInclude Include="Silla.h" />
+    <ClInclude Include="Tetraedo.h" />
+    <ClInclude Include="vertex.h" />
+    <ClInclude Include="O3DS.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="openGl.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="nubes.bmp" />
+    <Image Include="text-madera.jpg" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9CCA7157-93A1-49C4-AF81-C44AAD9B6BC9}</ProjectGuid>
+    <RootNamespace>openGl</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\CImg-1.6.9_pre122115\plugins;C:\CImg-1.6.9_pre122115;C:\gli\external\glm-0.9.7.1;C:\gli;C:\glut\glew-1.11.0\include;C:\glut\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\glut\glew-1.11.0\lib;C:\glut\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freeglut.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>C:\glut\glew-1.11.0\include;C:\glut\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\glut\glew-1.11.0\lib;C:\glut\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freeglut.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
